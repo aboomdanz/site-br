@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal Aboomdanz - A Geometria Oculta do Dar e Receber">
+    <meta property="og:title" content="ABOOMDANZ - Portal Aboomdanz">
+    <meta property="og:description" content="A Geometria Oculta do Dar e Receber">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/sitesv/AA5AbUDvhMcmywMAv8F0timIEsOa9l1ncmHMlNxbQaQAeQVq3wIOdHTg7gZ06w7ZLwUZ7j9qfJtVkgFgFws-0kDODRCSkT6PXO_MBr_4cQ5onc_gHIRAI-HgbsCAJdfIpt7Yt3jFgn1brkfKx8BsMWPu0BVoNu4wjTGISICIw3FRtF9j6hRQsUbyTreNoWM=w16383">
+    <title>ABOOMDANZ - Portal Aboomdanz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Merriweather+Sans:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #1c1c1c;
+            --primary-light: #ffffff;
+            --accent-gold: #ffb703;
+            --accent-dark: #000000;
+            --text-primary: #f9f9f9;
+            --text-secondary: #cccccc;
+            --bg-dark: #0a0a0a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-dark);
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                        url('https://lh3.googleusercontent.com/sitesv/AA5AbUDvhMcmywMAv8F0timIEsOa9l1ncmHMlNxbQaQAeQVq3wIOdHTg7gZ06w7ZLwUZ7j9qfJtVkgFgFws-0kDODRCSkT6PXO_MBr_4cQ5onc_gHIRAI-HgbsCAJdfIpt7Yt3jFgn1brkfKx8BsMWPu0BVoNu4wjTGISICIw3FRtF9j6hRQsUbyTreNoWM=w16383');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Merriweather Sans', sans-serif;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+
+        section p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .highlight-dark {
+            background: var(--accent-dark);
+            color: var(--accent-gold);
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-gold);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .content-card {
+            background: linear-gradient(135deg, #222222 0%, #1a1a1a 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--accent-gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(255, 183, 3, 0.2);
+        }
+
+        .content-card h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .content-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ===== LIST STYLES ===== */
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-gold);
+            color: var(--accent-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-gold);
+            cursor: pointer;
+            margin-right: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-gold);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-gold);
+            color: var(--accent-dark);
+        }
+
+        /* ===== IMAGE SECTION ===== */
+        .image-section {
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(255, 183, 3, 0.1);
+            margin: 1rem 0;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, #0d0d0d 0%, #000000 100%);
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 2px solid var(--accent-gold);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                margin-right: 0.5rem;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER/NAVIGATION -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">ABOOMDANZ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="portal.html" class="active">Portal Aboomdanz</a></li>
+                <li><a href="biblioteca.html">Biblioteca</a></li>
+                <li><a href="redes-sociais.html">Redes Sociais</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Portal Aboomdanz</h1>
+            <p>A Geometria Oculta do Dar e Receber</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- INTRODUCTION SECTION -->
+        <section>
+            <h2>Bem-vindo ao Portal de Ativação</h2>
+            <p class="highlight">Este é o espaço sagrado de transmutação da energia.</p>
+
+            <div class="highlight-dark">
+                <p><strong>O Portal Aboomdanz foi criado como uma extensão digital do experimento das moedas deixadas em lugares públicos.</strong></p>
+                <p><strong>Aqui, a intenção pura encontra a tecnologia moderna para amplificar seu fluxo de abundância.</strong></p>
+            </div>
+
+            <p>O experimento original começou simples: deixar moedas em lugares estratégicos, carregadas com a intenção de ativar um fluxo invisível de dar e receber. Cada moeda era um sinal de que <strong>o universo está sempre disponível para quem entende a linguagem da energia.</strong></p>
+        </section>
+
+        <!-- ACTIVATION SECTION -->
+        <section>
+            <h2>A Geometria Oculta do Dar e Receber</h2>
+            <p>Existem três camadas neste Portal:</p>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>🔄 O Ciclo</h3>
+                    <p>Compreender que dar e receber não são opostos, mas partes de um único ciclo contínuo de energia. Quando você descobre esse segredo, a abundância deixa de ser uma possibilidade remota e se torna sua realidade cotidiana.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>⚡ A Transmutação</h3>
+                    <p>Este portal funciona como um espaço de transformação. Aqui, sua intenção é amplificada através da comunidade e retorna multiplicada. É a lei do retorno em ação digital.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>🌟 A Manifestação</h3>
+                    <p>Quando você participa conscientemente do fluxo, você não apenas recebe — você <strong>muda o código da realidade à sua volta</strong>. Isso é manifestação verdadeira.</p>
+                </div>
+            </div>
+
+            <div class="highlight-dark">
+                <p><strong>O segredo que 95% da população nunca descobrirá:</strong></p>
+                <p>A abundância não vem de competir. Vem de colaborar com a energia do universo através da generosidade consciente.</p>
+            </div>
+        </section>
+
+        <!-- ACTIVATION PRACTICES -->
+        <section>
+            <h2>Práticas de Ativação</h2>
+            <p>Para usar efetivamente este Portal, siga estas práticas:</p>
+
+            <h3>1. Estabeleça a Intenção</h3>
+            <p>Antes de participar, articule claramente sua intenção. Não é sobre ganhar dinheiro — é sobre ativar seu fluxo de abundância natural.</p>
+
+            <h3>2. Participe Conscientemente</h3>
+            <p>Cada ação aqui é um voto para a abundância coletiva. Quando você dá, você está literalmente reprogramando a frequência ao seu redor.</p>
+
+            <h3>3. Observe os Padrões</h3>
+            <p>Rastreie o que muda quando você ativa esse Portal. Sincronias, encontros, oportunidades — tudo muda. O universo responde àqueles que falam sua linguagem.</p>
+
+            <h3>4. Converse com a Comunidade</h3>
+            <p>Compartilhe suas experiências. Cada história de ativação bem-sucedida amplifica o campo energético para todos.</p>
+        </section>
+
+        <!-- TRANSFORMATION SECTION -->
+        <section>
+            <h2>Transformação Através da Ação</h2>
+            <p>O Portal Aboomdanz não é um espaço passivo. É um <strong>laboratório vivo de transmutação</strong>.</p>
+
+            <p>Cada pessoa que entra aqui com a intenção correta torna-se um transmissor. E cada transmissor amplifica o sinal para os próximos.</p>
+
+            <div class="image-section">
+                <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUCM7oakSUnASKFKn1cVTdgersX_RxztckJDjs2kl-xBeps-DHj5OTh8kNLtLNc2AGQiptLXyNADki7yblahCvrT7i_AmQ61Day__sogbtCf29dSejYr7PD-a60Qx5O7kaxXn-uwr9SPVtPib2k63Z27yoRAPcJfH5nrmCCYd5jp5POS6T6zPFDAbjw=w1280" alt="Portal Aboomdanz - Transmutação">
+            </div>
+
+            <h3>Os Benefícios da Ativação</h3>
+            <ul>
+                <li><strong>Sincronias aumentadas:</strong> A vida começa a se organizar de forma aparentemente mágica</li>
+                <li><strong>Oportunidades inesperadas:</strong> Portas que estavam fechadas abrem naturalmente</li>
+                <li><strong>Relacionamentos elevados:</strong> Você atrai pessoas no mesmo nível de consciência</li>
+                <li><strong>Abundância financeira:</strong> Quando o bloqueio energético é removido, o dinheiro flui naturalmente</li>
+                <li><strong>Paz interior:</strong> Você entende finalmente que o universo é abundante para todos</li>
+            </ul>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section>
+            <h2>Inicie Sua Jornada de Ativação Agora</h2>
+            <div class="highlight-dark">
+                <p><strong>O Portal está aberto.</strong></p>
+                <p><strong>A questão não é se você merece a abundância — você sempre mereceu.</strong></p>
+                <p><strong>A questão é: você está pronto para reivindicá-la?</strong></p>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="index.html" class="btn">Voltar ao Início</a>
+                <a href="biblioteca.html" class="btn btn-secondary">Acessar Biblioteca</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Aboomdanz Brasil. Todos os direitos reservados.</p>
+        <p>Portal Aboomdanz - A Geometria Oculta do Dar e Receber</p>
+        <div class="social-links">
+            <a href="redes-sociais.html">Nossas Redes Sociais</a>
+            <a href="index.html">Início</a>
+            <a href="biblioteca.html">Biblioteca</a>
+        </div>
+    </footer>
+</body>
+</html>
