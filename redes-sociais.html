@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ABOOMDANZ - Redes Sociais: O despertar começa de forma individual, mas ele se expande e se sustenta em comunidade.">
+    <meta property="og:title" content="ABOOMDANZ - Redes Sociais">
+    <meta property="og:description" content="O despertar começa de forma individual, mas ele se expande e se sustenta em comunidade.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/sitesv/AA5AbUAs5pvNRHs2iHRaObD3kAMMRZXKvhboNrzHyU3qo917cd3-C8J8lThVJde3IUtIKJeP6r9BEL8-qgPl8tYHTZMFJbruFoJhX0N5QufWn3CZv0iTGO3obQPkIGdVyv8sVCIMpFwbW-OK74K4Cjb5LMxE-D3nyfMkSIKs2LpO5Zb03OO9Ic0QMeAOsQw=w16383">
+    <title>ABOOMDANZ - Redes Sociais</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Merriweather+Sans:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary-dark: #1c1c1c;
+            --primary-light: #ffffff;
+            --accent-gold: #ffb703;
+            --accent-dark: #000000;
+            --text-primary: #f9f9f9;
+            --text-secondary: #cccccc;
+            --bg-dark: #0a0a0a;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-dark);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+        .nav-links a.active {
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://lh3.googleusercontent.com/sitesv/AA5AbUAs5pvNRHs2iHRaObD3kAMMRZXKvhboNrzHyU3qo917cd3-C8J8lThVJde3IUtIKJeP6r9BEL8-qgPl8tYHTZMFJbruFoJhX0N5QufWn3CZv0iTGO3obQPkIGdVyv8sVCIMpFwbW-OK74K4Cjb5LMxE-D3nyfMkSIKs2LpO5Zb03OO9Ic0QMeAOsQw=w16383');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-primary);
+        }
+        .hero-content h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Merriweather Sans', sans-serif;
+            line-height: 1.2;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+        section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-gold);
+        }
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+        section h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent-gold);
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+        section p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        .highlight {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+        .highlight-dark {
+            background: var(--accent-dark);
+            color: var(--accent-gold);
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-gold);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        /* SOCIAL CARDS GRID */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .social-card {
+            background: linear-gradient(135deg, #222222 0%, #1a1a1a 100%);
+            border-radius: 8px;
+            border: 1px solid var(--accent-gold);
+            overflow: hidden;
+            padding: 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .social-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(255, 183, 3, 0.2);
+        }
+        .social-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .social-card h3 {
+            color: var(--accent-gold);
+            margin-bottom: 0.6rem;
+            font-size: 1.2rem;
+        }
+        .social-card p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            margin-bottom: 1.2rem;
+        }
+        .social-card a.btn {
+            margin-top: 0;
+        }
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.2rem;
+            background-color: var(--accent-gold);
+            color: var(--accent-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            border: 2px solid var(--accent-gold);
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-gold);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+        }
+        .btn-secondary:hover {
+            background-color: var(--accent-gold);
+            color: var(--accent-dark);
+        }
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            margin-bottom: 0.8rem;
+            color: var(--text-secondary);
+        }
+        footer {
+            background: linear-gradient(135deg, #0d0d0d 0%, #000000 100%);
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 2px solid var(--accent-gold);
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        .footer-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            section {
+                padding: 1.5rem;
+            }
+            section h2 {
+                font-size: 1.5rem;
+            }
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER/NAVIGATION -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">ABOOMDANZ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="portal.html">Portal Aboomdanz</a></li>
+                <li><a href="biblioteca.html">Biblioteca</a></li>
+                <li><a href="redes-sociais.html" class="active">Redes Sociais</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Redes Sociais</h1>
+            <p>O despertar começa de forma individual, mas ele se expande e se sustenta em comunidade.</p>
+        </div>
+    </section>
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- INTRODUCTION SECTION -->
+        <section>
+            <h2>Conexão, Comunidade e Expansão</h2>
+            <p class="highlight">A abundância é coletiva.</p>
+            <div class="highlight-dark">
+                <p>As redes sociais Aboomdanz são o ponto de encontro diário para compartilhamento de ideias, técnicas e sincronicidades vividas por nossos membros.</p>
+            </div>
+            <p>Escolha sua plataforma favorita e venha expandir a consciência junto com a gente:</p>
+        </section>
+        <!-- SOCIAL LINKS GRID -->
+        <section>
+            <h2>Nossas Plataformas Oficiais</h2>
+            <div class="social-grid">
+                <div class="social-card">
+                    <div class="icon">📷</div>
+                    <h3>Instagram</h3>
+                    <p>Conteúdo diário: carrosséis, stories e lives sobre consciência, abundância e histórias reais de transformação.</p>
+                    <a href="#" target="_blank" class="btn">Acessar Instagram</a>
+                </div>
+                <div class="social-card">
+                    <div class="icon">🎦</div>
+                    <h3>YouTube</h3>
+                    <p>Vídeos, entrevistas e séries especiais aprofundando temas do despertar espiritual de maneira inovadora.</p>
+                    <a href="#" target="_blank" class="btn">Acessar YouTube</a>
+                </div>
+                <div class="social-card">
+                    <div class="icon">💬</div>
+                    <h3>Telegram Comunidade</h3>
+                    <p>O canal de bate-papo direto e comunidade vibracional ativa &mdash; links, avisos, desafios, materiais exclusivos.</p>
+                    <a href="#" target="_blank" class="btn">Entrar no Telegram</a>
+                </div>
+                <div class="social-card">
+                    <div class="icon">👤</div>
+                    <h3>Tiktok</h3>
+                    <p>Drops diários, micro-conteúdos e tendências para viralizar o autoconhecimento de uma forma divertida e poderosa.</p>
+                    <a href="#" target="_blank" class="btn">Acessar TikTok</a>
+                </div>
+                <div class="social-card">
+                    <div class="icon">🟦</div>
+                    <h3>Facebook</h3>
+                    <p>Conecte-se com postagens, eventos, grupos e discussões semanais — uma ponte para todos.</p>
+                    <a href="#" target="_blank" class="btn">Acessar Facebook</a>
+                </div>
+                <div class="social-card">
+                    <div class="icon">🟪</div>
+                    <h3>Threads</h3>
+                    <p>Atualizações rápidas, reflexões e discussões diárias em texto — entre para um ciclo de ideias dinâmicas.</p>
+                    <a href="#" target="_blank" class="btn">Acessar Threads</a>
+                </div>
+                <div class="social-card">
+                    <div class="icon">🌐</div>
+                    <h3>Site Oficial</h3>
+                    <p>Todo o conteúdo, novidades, artigos e links em único endereço seguro.</p>
+                    <a href="index.html" class="btn">Visitar o site</a>
+                </div>
+            </div>
+        </section>
+        <!-- CALL TO ACTION -->
+        <section>
+            <h2>Participe e Expanda Sua Rede!</h2>
+            <div class="highlight-dark">
+                <p>Cada curtida, compartilhamento e troca na comunidade ativa um campo de sincronicidade. </p>
+                <p>O Despertar é exponencial: conecte-se, contribua e ative sua abundância junto com o coletivo!</p>
+            </div>
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="index.html" class="btn">Voltar ao Início</a>
+                <a href="portal.html" class="btn btn-secondary">Portal</a>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Aboomdanz Brasil. Todos os direitos reservados.</p>
+        <p>Redes Sociais Aboomdanz - Sua Frequência na Comunidade</p>
+        <div class="footer-links">
+            <a href="index.html">Início</a>
+            <a href="portal.html">Portal</a>
+            <a href="biblioteca.html">Biblioteca</a>
+        </div>
+    </footer>
+</body>
+</html>
