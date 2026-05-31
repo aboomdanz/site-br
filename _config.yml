@@ -1,0 +1,26 @@
+theme: null
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Site Settings
+title: Aboomdanz Brasil
+description: Site Aboomdanz Brasil - Despertar Espiritual e Abundância Infinita
+url: https://aboomdanz.github.io/site-br
+repository: aboomdanz/site-br
+
+# Jekyll Settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Defaults
+defaults:
+  - scope:
+      path: "*.html"
+    values:
+      layout: null
+
+# GitHub Pages
+github: [metadata]
