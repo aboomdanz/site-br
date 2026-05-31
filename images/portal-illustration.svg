@@ -1,0 +1,44 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="portalGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffb703;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#ff6b00;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:0" />
+    </radialGradient>
+    <filter id="portalGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#0a0a0a"/>
+  
+  <!-- Portal center glow -->
+  <circle cx="200" cy="150" r="80" fill="url(#portalGrad)" filter="url(#portalGlow)"/>
+  
+  <!-- Portal rings -->
+  <circle cx="200" cy="150" r="70" fill="none" stroke="#ffb703" stroke-width="3" opacity="0.8"/>
+  <circle cx="200" cy="150" r="55" fill="none" stroke="#ff9500" stroke-width="2" opacity="0.6" stroke-dasharray="5,5"/>
+  <circle cx="200" cy="150" r="40" fill="none" stroke="#ffb703" stroke-width="2" opacity="0.4"/>
+  <circle cx="200" cy="150" r="25" fill="none" stroke="#ff6b00" stroke-width="1" opacity="0.5" stroke-dasharray="3,3"/>
+  
+  <!-- Center energy core -->
+  <circle cx="200" cy="150" r="15" fill="#ffb703" opacity="0.7"/>
+  <circle cx="200" cy="150" r="8" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Energy particles around portal -->
+  <circle cx="160" cy="100" r="4" fill="#ffb703" opacity="0.6"/>
+  <circle cx="240" cy="90" r="3" fill="#ffb703" opacity="0.5"/>
+  <circle cx="280" cy="130" r="4" fill="#ff9500" opacity="0.7"/>
+  <circle cx="270" cy="200" r="3" fill="#ffb703" opacity="0.5"/>
+  <circle cx="180" cy="240" r="4" fill="#ff6b00" opacity="0.6"/>
+  <circle cx="120" cy="190" r="3" fill="#ffb703" opacity="0.5"/>
+  <circle cx="130" cy="120" r="4" fill="#ffb703" opacity="0.6"/>
+  
+  <!-- Transmutation symbol -->
+  <text x="200" y="165" font-size="24" fill="#000000" text-anchor="middle" font-weight="bold" opacity="0.8">∞</text>
+</svg>

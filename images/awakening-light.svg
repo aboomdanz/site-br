@@ -1,0 +1,39 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="lightGrad" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" style="stop-color:#ffb703;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b00;stop-opacity:0.3" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#0a0a0a"/>
+  
+  <!-- Ground -->
+  <ellipse cx="200" cy="280" rx="180" ry="30" fill="#1a1a1a"/>
+  
+  <!-- Person silhouette -->
+  <circle cx="200" cy="180" r="20" fill="#2a2a2a"/>
+  <rect x="185" y="205" width="30" height="40" fill="#2a2a2a"/>
+  <rect x="165" y="210" width="15" height="35" fill="#2a2a2a"/>
+  <rect x="220" y="210" width="15" height="35" fill="#2a2a2a"/>
+  
+  <!-- Light rays emanating from person -->
+  <line x1="200" y1="80" x2="200" y2="20" stroke="#ffb703" stroke-width="2" opacity="0.6"/>
+  <line x1="150" y1="100" x2="100" y2="40" stroke="#ffb703" stroke-width="2" opacity="0.5"/>
+  <line x1="250" y1="100" x2="300" y2="40" stroke="#ffb703" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Aura/Energy circles -->
+  <circle cx="200" cy="160" r="35" fill="none" stroke="#ffb703" stroke-width="2" opacity="0.6"/>
+  <circle cx="200" cy="160" r="55" fill="none" stroke="#ffb703" stroke-width="1" opacity="0.3"/>
+  <circle cx="200" cy="160" r="75" fill="none" stroke="#ffb703" stroke-width="1" opacity="0.1"/>
+  
+  <!-- Central light burst -->
+  <circle cx="200" cy="160" r="20" fill="url(#lightGrad)" opacity="0.8"/>
+  
+  <!-- Stars/Awakening symbols -->
+  <circle cx="80" cy="60" r="3" fill="#ffb703"/>
+  <circle cx="320" cy="70" r="3" fill="#ffb703"/>
+  <circle cx="150" cy="30" r="2" fill="#ffb703" opacity="0.7"/>
+  <circle cx="250" cy="25" r="2" fill="#ffb703" opacity="0.7"/>
+</svg>

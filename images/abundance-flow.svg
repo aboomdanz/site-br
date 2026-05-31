@@ -1,0 +1,46 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffb703;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff9500;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ff6b00;stop-opacity:0.6" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#0a0a0a"/>
+  
+  <!-- Energy source (left) -->
+  <circle cx="60" cy="150" r="25" fill="none" stroke="#ffb703" stroke-width="3"/>
+  <circle cx="60" cy="150" r="15" fill="#ffb703" opacity="0.7"/>
+  <circle cx="60" cy="150" r="8" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Flowing streams -->
+  <path d="M 85 130 Q 150 100 220 130" stroke="url(#flowGrad)" stroke-width="3" fill="none" filter="url(#glow)"/>
+  <path d="M 85 150 Q 150 150 220 150" stroke="url(#flowGrad)" stroke-width="3" fill="none" filter="url(#glow)"/>
+  <path d="M 85 170 Q 150 200 220 170" stroke="url(#flowGrad)" stroke-width="3" fill="none" filter="url(#glow)"/>
+  
+  <!-- Collection point (right) -->
+  <circle cx="340" cy="150" r="25" fill="none" stroke="#ffb703" stroke-width="3"/>
+  <circle cx="340" cy="150" r="15" fill="#ffb703" opacity="0.5"/>
+  
+  <!-- Abundance symbols (coins/energy) -->
+  <circle cx="130" cy="110" r="6" fill="#ffb703" opacity="0.8"/>
+  <circle cx="170" cy="95" r="5" fill="#ffb703" opacity="0.7"/>
+  <circle cx="210" cy="110" r="6" fill="#ffb703" opacity="0.8"/>
+  
+  <circle cx="130" cy="190" r="6" fill="#ffb703" opacity="0.8"/>
+  <circle cx="170" cy="205" r="5" fill="#ffb703" opacity="0.7"/>
+  <circle cx="210" cy="190" r="6" fill="#ffb703" opacity="0.8"/>
+  
+  <!-- Center abundance symbol -->
+  <circle cx="200" cy="150" r="20" fill="none" stroke="#ffb703" stroke-width="2" opacity="0.6" stroke-dasharray="5,5"/>
+  <text x="200" y="156" font-size="20" fill="#ffb703" text-anchor="middle" font-weight="bold">∞</text>
+</svg>
