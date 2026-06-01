@@ -6,7 +6,7 @@
     <meta name="description" content="A Matrix Espiritual: O Segredo de 5% que Deixou a Sobrevivência para Viver a Abundância Infinita">
     <meta property="og:title" content="ABOOMDANZ">
     <meta property="og:description" content="A Matrix Espiritual: O Segredo de 5% que Deixou a Sobrevivência para Viver a Abundância Infinita">
-    <meta property="og:image" content="./images/hero-bg.jpg">
+    <meta property="og:image" content="./images/logo.svg">
     <title>ABOOMDANZ - A Matrix Espiritual</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Merriweather+Sans:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -24,6 +24,7 @@
             --text-primary: #f9f9f9;
             --text-secondary: #cccccc;
             --bg-dark: #0a0a0a;
+            --bg-card: #151515;
         }
 
         html {
@@ -40,11 +41,12 @@
         /* ===== HEADER ===== */
         header {
             background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-            padding: 1rem 0;
+            padding: 1.2rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 15px rgba(255, 183, 3, 0.1);
+            border-bottom: 1px solid rgba(255, 183, 3, 0.15);
         }
 
         nav {
@@ -56,188 +58,370 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.8rem;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 24px;
+            filter: drop-shadow(0 0 8px rgba(255, 183, 3, 0.3));
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--accent-gold);
             text-decoration: none;
             font-family: 'Merriweather Sans', sans-serif;
+            letter-spacing: 2px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
             color: var(--text-primary);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             font-family: 'Merriweather Sans', sans-serif;
+            font-size: 0.95rem;
+            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--accent-gold);
         }
 
+        .nav-links a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            border-radius: 1px;
+        }
+
         .nav-links a.active {
             color: var(--accent-gold);
-            border-bottom: 2px solid var(--accent-gold);
         }
 
         /* ===== HERO SECTION ===== */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
-                        url('./images/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 80vh;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+            height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 183, 3, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(255, 183, 3, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
         }
 
         .hero-content h1 {
-            font-size: clamp(2rem, 8vw, 4rem);
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-family: 'Merriweather Sans', sans-serif;
-            line-height: 1.2;
+            line-height: 1.3;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--accent-gold);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* ===== DECORATIVE ELEMENT ===== */
+        .divider {
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .divider-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .divider-line::before,
+        .divider-line::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--accent-gold), transparent);
+        }
+
+        .divider-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(255, 183, 3, 0.4);
         }
 
         /* ===== MAIN CONTENT ===== */
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
         }
 
         section {
-            margin: 4rem 0;
-            padding: 2rem;
+            margin: 5rem 0;
+            padding: 3rem 2.5rem;
             background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-gold);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 183, 3, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        section:hover {
+            border-color: rgba(255, 183, 3, 0.25);
+            box-shadow: 0 8px 32px rgba(255, 183, 3, 0.08);
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-gold), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        section:hover::before {
+            opacity: 1;
         }
 
         section h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 1.5rem;
             color: var(--accent-gold);
             font-family: 'Merriweather Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        section h2::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: var(--accent-gold);
+            border-radius: 2px;
         }
 
         section h3 {
-            font-size: 1.5rem;
-            margin-top: 1.5rem;
+            font-size: 1.4rem;
+            margin-top: 1.8rem;
             margin-bottom: 1rem;
             color: var(--accent-gold);
             font-family: 'Merriweather Sans', sans-serif;
         }
 
         section p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             color: var(--text-secondary);
-            line-height: 1.8;
+            line-height: 1.9;
+            font-size: 1rem;
         }
 
         .highlight {
             color: var(--accent-gold);
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .highlight-dark {
-            background: var(--accent-dark);
+            background: rgba(0, 0, 0, 0.4);
             color: var(--accent-gold);
-            padding: 1rem;
-            border-left: 4px solid var(--accent-gold);
-            margin: 1rem 0;
-            border-radius: 4px;
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent-gold);
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            backdrop-filter: blur(10px);
+        }
+
+        .highlight-dark p {
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight-dark p:last-child {
+            margin-bottom: 0;
         }
 
         /* ===== FEATURES SECTION ===== */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
         }
 
         .feature-card {
-            background: linear-gradient(135deg, #222222 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(20, 20, 20, 0.8) 100%);
             padding: 2rem;
-            border-radius: 8px;
-            border: 2px solid var(--accent-gold);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 183, 3, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent-gold), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(255, 183, 3, 0.2);
+            transform: translateY(-8px);
+            border-color: rgba(255, 183, 3, 0.4);
+            box-shadow: 0 12px 32px rgba(255, 183, 3, 0.12);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .feature-card h3 {
             color: var(--accent-gold);
             margin-bottom: 1rem;
+            margin-top: 0;
+            font-size: 1.3rem;
         }
 
         .feature-card p {
             color: var(--text-secondary);
             font-size: 0.95rem;
+            line-height: 1.7;
         }
 
-        .feature-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* ===== IMAGE SECTION ===== */
-        .image-section {
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .image-section img {
-            max-width: 100%;
-            height: auto;
+        /* ===== INFOGRAPHIC ELEMENTS ===== */
+        .info-graphic {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 183, 3, 0.03);
             border-radius: 8px;
-            box-shadow: 0 5px 25px rgba(255, 183, 3, 0.1);
-            margin: 1rem 0;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .info-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            opacity: 0.3;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+
+        .info-content {
+            flex: 1;
+        }
+
+        .info-content p {
+            margin: 0;
+            color: var(--text-secondary);
         }
 
         /* ===== LIST STYLES ===== */
         ul, ol {
             margin-left: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        li::marker {
+            color: var(--accent-gold);
+            font-weight: 600;
         }
 
         /* ===== BUTTONS ===== */
         .btn {
             display: inline-block;
-            padding: 0.8rem 1.5rem;
+            padding: 0.95rem 2rem;
             background-color: var(--accent-gold);
             color: var(--accent-dark);
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: 700;
+            border-radius: 6px;
+            font-weight: 600;
             transition: all 0.3s ease;
             border: 2px solid var(--accent-gold);
             cursor: pointer;
+            font-family: 'Merriweather Sans', sans-serif;
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
             background-color: transparent;
             color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 183, 3, 0.25);
         }
 
         .btn-secondary {
@@ -251,36 +435,80 @@
             color: var(--accent-dark);
         }
 
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
         /* ===== FOOTER ===== */
         footer {
             background: linear-gradient(135deg, #0d0d0d 0%, #000000 100%);
             color: var(--text-secondary);
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-top: 2px solid var(--accent-gold);
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(255, 183, 3, 0.15);
         }
 
         footer p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
         }
 
         .social-links {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .social-links a {
             color: var(--accent-gold);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            position: relative;
         }
 
         .social-links a:hover {
             color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.8s ease-out;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -294,32 +522,55 @@
             }
 
             section {
-                padding: 1.5rem;
+                padding: 1.8rem 1.5rem;
+                margin: 3rem 0;
             }
 
             section h2 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             .features {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .info-graphic {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            main {
+                padding: 2rem 0.5rem;
             }
         }
 
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ===== CUSTOM SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
 
-        section {
-            animation: fadeInUp 0.8s ease-out;
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gold);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff9500;
         }
     </style>
 </head>
@@ -327,12 +578,24 @@
     <!-- HEADER/NAVIGATION -->
     <header>
         <nav>
-            <a href="#" class="logo">ABOOMDANZ</a>
+            <div class="logo-container">
+                <svg class="logo-icon" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ffb703;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff9500;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M 30 60 Q 30 30, 60 30 Q 90 30, 100 60 Q 110 30, 140 30 Q 170 30, 170 60 Q 170 90, 140 90 Q 110 90, 100 60 Q 90 90, 60 90 Q 30 90, 30 60" 
+                          fill="none" stroke="url(#logoGrad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <a href="#" class="logo-text">ABOOMDANZ</a>
+            </div>
             <ul class="nav-links">
                 <li><a href="#inicio" class="active">Início</a></li>
-                <li><a href="portal.html">Portal Aboomdanz</a></li>
+                <li><a href="portal.html">Portal</a></li>
                 <li><a href="biblioteca.html">Biblioteca</a></li>
-                <li><a href="redes-sociais.html">Redes Sociais</a></li>
+                <li><a href="redes-sociais.html">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -341,51 +604,69 @@
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Como Sair do Piloto Automático e Ativar a Manifestação da Abundância Infinita?</h1>
+            <p class="hero-subtitle">O Despertar que Transforma Vidas</p>
         </div>
     </section>
+
+    <!-- DECORATIVE DIVIDER -->
+    <div class="divider">
+        <div class="divider-line">
+            <div class="divider-dot"></div>
+        </div>
+    </div>
 
     <!-- MAIN CONTENT -->
     <main>
         <!-- MATRIX SECTION -->
         <section>
             <h2>A Matrix Espiritual: O Segredo de 5%</h2>
-            <p class="highlight">O Segredo de 5% que Deixou a Sobrevivência para Viver a Abundância Infinita</p>
-
-            <div class="image-section">
-                <img src="./images/matrix-visualization.svg" alt="Visualização da Matrix Espiritual" loading="lazy">
-            </div>
 
             <div class="highlight-dark">
                 <p><strong>Você acorda, toma o mesmo café e enfrenta os mesmos problemas com rostos diferentes.</strong></p>
                 <p><strong>A verdade que ninguém te conta é direta: você está preso em uma simulação invisível.</strong></p>
             </div>
 
-            <p>Cerca de 95% da população mundial passa a vida inteira sem perceber que está apenas rodando o modo Tutorial de um jogo complexo, repetindo os mesmos medos, as mesmas brigas e os mesmos ciclos de escassez.</p>
+            <div class="info-graphic">
+                <div class="info-number">95%</div>
+                <div class="info-content">
+                    <p><strong>Dormindo</strong> — A população mundial passa a vida inteira rodando o modo Tutorial de um jogo complexo, repetindo os mesmos medos, as mesmas brigas e os mesmos ciclos de escassez.</p>
+                </div>
+            </div>
 
-            <p>Eles acham que a vida é difícil. Não é.</p>
+            <p>Eles acham que a vida é difícil. <span class="highlight">Não é.</span></p>
 
             <p><strong>É apenas o algoritmo do ego mantendo todos no piloto automático.</strong></p>
+
+            <div class="info-graphic">
+                <div class="info-number">5%</div>
+                <div class="info-content">
+                    <p><strong>Despertado</strong> — Quem compreende a física invisível da energia consegue sair do loop e viver na abundância infinita.</p>
+                </div>
+            </div>
         </section>
+
+        <div class="divider">
+            <div class="divider-line">
+                <div class="divider-dot"></div>
+            </div>
+        </div>
 
         <!-- AWAKENING SECTION -->
         <section>
             <h2>O Estalo e a Quebra do Script</h2>
 
-            <div class="image-section">
-                <img src="./images/awakening-light.svg" alt="Despertar e Iluminação" loading="lazy">
-            </div>
-
             <p>Há algum tempo, eu também fazia parte dos 95%.</p>
 
             <p>Mas tudo mudou com um experimento físico simples, quase absurdo: comecei a deixar moedas em lugares públicos, carregadas com a intenção pura de ativar um fluxo invisível de dádiva.</p>
 
-            <p><strong>Quando desapeguei do controle e entendi a física da energia, o estalo aconteceu.</strong></p>
+            <div class="highlight-dark">
+                <p><strong>Quando desapeguei do controle e entendi a física da energia, o estalo aconteceu.</strong></p>
+                <p><strong>O jogo reiniciou.</strong></p>
+            </div>
 
-            <p><strong>O jogo reiniciou.</strong></p>
+            <p>Descobri que a espiritualidade chama isso de <span class="highlight">Despertar</span> e a ciência chama de <span class="highlight">reprogramar o Mapa Cognitivo</span>.</p>
 
-            <p>Descobri que a espiritualidade chama isso de <strong>Despertar</strong> e a ciência chama de <strong>reprogramar o Mapa Cognitivo</strong>.</p>
-
-            <p>A verdade é que a realidade ao seu redor se reorganiza imediatamente quando você muda a sua frequência da escassez para a <strong>Consciência</strong>.</p>
+            <p>A verdade é que a realidade ao seu redor se reorganiza imediatamente quando você muda a sua frequência da escassez para a <span class="highlight">Consciência</span>.</p>
 
             <p><strong>O Despertar é a maior bênção que VOCÊ pode experimentar nesta dimensão 3D — e é a única coisa que você levará deste mundo quando a partida terminar.</strong></p>
 
@@ -394,33 +675,35 @@
             <p><strong>É o espaço onde transformamos a informação em chaves práticas para que você assuma o controle do console da sua vida.</strong></p>
         </section>
 
+        <div class="divider">
+            <div class="divider-line">
+                <div class="divider-dot"></div>
+            </div>
+        </div>
+
         <!-- ACTIVATE SECTION -->
         <section>
             <h2>Ative o Seu Fluxo Agora</h2>
-            <p>O ecossistema Aboomdanz foi desenhado para acelerar a sua transição:</p>
+            <p>O ecossistema Aboomdanz foi desenhado para acelerar a sua transição de sobrevivência para abundância:</p>
 
             <div class="features">
                 <div class="feature-card">
-                    <div class="icon">📚</div>
+                    <div class="feature-icon">📚</div>
                     <h3>Biblioteca do Despertar</h3>
-                    <p>O nosso blog vivo. Um arquivo público de conhecimentos, técnicas e insights práticos atualizados constantemente para você acessar e expandir sua mente.</p>
+                    <p>Um arquivo público de conhecimentos, técnicas e insights práticos. Atualizados constantemente para você expandir sua mente e integrar novas perspectivas.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="icon">🌟</div>
+                    <div class="feature-icon">🌟</div>
                     <h3>Portal Aboomdanz</h3>
-                    <p>O espaço sagrado de ativação. Inspirado no experimento das moedas físicas, este portal replica digitalmente o fluxo da abundância através de cripto-energia.</p>
+                    <p>O espaço sagrado de ativação. Inspirado no experimento das moedas físicas, replica digitalmente o fluxo da abundância através de cripto-energia.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="icon">🤝</div>
-                    <h3>Redes Sociais</h3>
-                    <p>Nosso meio de contato direto e diário com cada um, compartilhando e trocando experiências nesta jornada de autoconhecimento.</p>
+                    <div class="feature-icon">🤝</div>
+                    <h3>Comunidade & Redes</h3>
+                    <p>Contato direto e diário. Compartilhe experiências, troque insights e evolua junto a uma comunidade de pessoas que já despertaram.</p>
                 </div>
-            </div>
-
-            <div class="image-section">
-                <img src="./images/abundance-flow.svg" alt="Fluxo de Abundância" loading="lazy">
             </div>
 
             <div class="highlight-dark">
@@ -428,31 +711,19 @@
                 <p><strong>No loop dos 95% que dormem ou na abundância infinita de quem já despertou?</strong></p>
             </div>
 
-            <div style="text-align: center; margin: 2rem 0;">
+            <div class="btn-group">
                 <a href="biblioteca.html" class="btn">Acessar Biblioteca</a>
-                <a href="portal.html" class="btn btn-secondary" style="margin-left: 1rem;">Portal Aboomdanz</a>
-            </div>
-        </section>
-
-        <!-- SHOWCASE SECTION -->
-        <section>
-            <h2>Conheça Nossos Espaços</h2>
-            <div class="image-section">
-                <img src="./images/biblioteca-illustration.svg" alt="Biblioteca - Autoconhecimento" loading="lazy">
-                <h3>Biblioteca - Autoconhecimento</h3>
-            </div>
-
-            <div class="image-section">
-                <img src="./images/portal-illustration.svg" alt="Portal - Transmutação" loading="lazy">
-                <h3>Portal - Transmutação</h3>
-            </div>
-
-            <div class="image-section">
-                <img src="./images/redes-sociais-illustration.svg" alt="Redes Sociais - Expansão" loading="lazy">
-                <h3>Redes Sociais - Expansão</h3>
+                <a href="portal.html" class="btn btn-secondary">Portal Aboomdanz</a>
             </div>
         </section>
     </main>
+
+    <!-- DECORATIVE DIVIDER -->
+    <div class="divider">
+        <div class="divider-line">
+            <div class="divider-dot"></div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer>
